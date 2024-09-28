@@ -34,7 +34,9 @@ public class Polynomial{
 				coeff[count] = c[i];
 			        expo[count] = e[i];
 				count = count + 1;
-			}	
+			}
+			
+			
 		}
 	}
 	public Polynomial(File file) throws FileNotFoundException {
@@ -102,7 +104,13 @@ public class Polynomial{
 				result = result + "";
 			}
 			else {
-				result = result + (int)coeff[i];
+				double num = coeff[i];
+				if((int)num == num){
+					result = result + (int)num;
+				}
+				else{
+					result = result + num;
+				}
 			}
 			
 			if(expo[i] != 0) {
