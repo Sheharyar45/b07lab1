@@ -18,11 +18,24 @@ public class Polynomial{
 		
 	}
 	public Polynomial(double[] c , int[] e) {
-		coeff = new double[c.length];
-		expo = new int[e.length];
+		int len = 0;
 		for(int i = 0 ; i < c.length;i++) {
-			coeff[i] = c[i];
-			expo[i] = e[i];
+			if(c[i]!=0){
+				len = len+1;
+			}
+			
+		}
+
+		coeff = new double[len];
+		expo = new int[len];
+		int count = 0;
+		for(int i = 0 ; i < c.length;i++) {
+			if(c[i]!=0){
+				coeff[count] = c[i];
+			    expo[count] = e[i];
+				count = count + 1;
+			}
+			
 			
 		}
 	}
@@ -102,7 +115,7 @@ public class Polynomial{
 			        result = result + "x" + expo[i];
 			    }
 			}
-			if(i != expo.length-1 && coeff[i+1]>0) {
+			if(i != expo.length-1 && coeff[i+1]>=0) {
 				result = result + "+";
 			}
 			
