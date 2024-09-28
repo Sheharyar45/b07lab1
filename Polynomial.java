@@ -32,11 +32,9 @@ public class Polynomial{
 		for(int i = 0 ; i < c.length;i++) {
 			if(c[i]!=0){
 				coeff[count] = c[i];
-			    expo[count] = e[i];
+			        expo[count] = e[i];
 				count = count + 1;
-			}
-			
-			
+			}	
 		}
 	}
 	public Polynomial(File file) throws FileNotFoundException {
